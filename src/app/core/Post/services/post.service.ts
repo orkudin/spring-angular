@@ -34,4 +34,9 @@ export class PostService {
   public findPost(postId: number): Observable<Post> {
     return this.http.get<Post>(`${this.apiServerUrl}/post/find/${postId}`)
   }
+
+  public getPostsByUser(userId: number): Observable<Post[]> {
+    return this.http.get<Post[]>(`${this.apiServerUrl}/post/findAllPostsByUserId/${userId}`)
+  }
+
 }
